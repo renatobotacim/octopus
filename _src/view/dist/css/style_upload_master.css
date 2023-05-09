@@ -1,0 +1,103 @@
+
+.area-upload{
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	padding: 10px;
+        margin-bottom: 15px;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+}
+
+.area-upload label.label-upload{
+	border: 2px dashed #474747;
+	min-height: 70px;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	color: #474747;
+	position: relative;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-o-transition: .3s all;
+	transition: .3s all;
+}
+
+.area-upload label.label-upload.highlight{
+    background-color: #ececec;
+}
+
+.area-upload label.label-upload *{
+	pointer-events: none;
+}
+
+.area-upload input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	-webkit-appearance: none;
+	opacity: 0;
+}
+
+.area-upload .lista-uploads{
+}
+
+.area-upload .lista-uploads .barra{
+	background-color: #e6e6e6;
+	margin: 10px 0;
+	width: 100%;
+	position: relative;
+}
+
+.area-upload .lista-uploads .barra .fill{
+	background-color: #e6e6e6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	min-width: 0;
+	
+	-webkit-transition: .2s all;
+	-moz-transition: .2s all;
+	-o-transition: .2s all;
+	transition: .2s all;
+}
+
+.area-upload .lista-uploads .barra.complete .fill{
+	background-color: #bcffdf;
+}
+
+.area-upload .lista-uploads .barra .text{
+	z-index: 10;
+	text-align: center;
+	padding: 3px 5px;
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	color: black;
+	font-size: 12px;
+}
+.area-upload .lista-uploads .barra .text a{
+	color: black;
+	font-weight: bold;
+}
+
+.area-upload .lista-uploads .barra .error .fill{	
+	background-color: #c02929;
+	color: white;
+	min-width: 100%;
+}
+
+.area-upload .lista-uploads .barra .error .text{
+	color: white;
+}
+
+
+
+
+
