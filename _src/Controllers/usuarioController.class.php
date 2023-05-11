@@ -92,9 +92,9 @@ class usuarioController {
         IMDErro($update->getError()[0], $update->getError()[1]);
     }
 
-    public function updade($id, $Data) {
+    public function updade($id, $data) {
         $update = new AdminUsuarios();
-        $update->ExeUpdate($id, $Data);
+        $update->ExeUpdate($id, $data);
         IMDErro($update->getError()[0], $update->getError()[1]);
     }
 
