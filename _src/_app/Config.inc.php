@@ -8,7 +8,7 @@ define('LINK', 'localhost/projetos/octopus/_src/uploads');
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('DBSA', 'octopus');
+define('DBSA', 'u774867044_octopus');
 
 define('MAILUSER', 'sistema@infire.com.br');
 define('MAILPASS', '*PS7D4@tWl');
