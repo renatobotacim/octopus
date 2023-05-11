@@ -16,25 +16,32 @@ $controller = new usuarioController();
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $Data = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+
+
 if (!empty($Data['SendAlter'])):
     unset($Data['SendAlter']);
     $controller->updade($id, $Data);
     $Data = $controller->read($id,$userlogin['usuario_empresa_id']);
+    
 elseif (!empty($Data['status'])):
     if ($Data['status'] == 'ativar'):
         unset($Data);
         $Data['usuario_status'] = 1;
         $Data['usuario_start'] = date('Y-m-d');
         $Data['usuario_end'] = null;
+        var_dump($Data);
     else:
         unset($Data);
         $Data['usuario_status'] = 2;
         $Data['usuario_end'] = date('Y-m-d');
+        var_dump($Data);
     endif;
     $controller->updade($id, $Data);
    $Data = $controller->read($id,$userlogin['usuario_empresa_id']);
+   var_dump($Data);
 else:
     $Data = $controller->read($id,$userlogin['usuario_empresa_id']);
+    var_dump($Data);
 endif;
 
 
@@ -114,6 +121,25 @@ require_once 'includes/navegador.php';
                                         <option value="1"  <?php if (isset($Data['usuario_permissao']) && $Data['usuario_permissao'] == 1) echo 'selected' ?>>Operador</option>
                                         <option value="2"  <?php if (isset($Data['usuario_permissao']) && $Data['usuario_permissao'] == 2) echo 'selected' ?>>Gestor</option>
                                         <option value="3"  <?php if (isset($Data['usuario_permissao']) && $Data['usuario_permissao'] == 3) echo 'selected' ?>>Administrador</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <?php
+                        endif;
+                        ?>
+                        <?php
+                        if ($userlogin['usuario_permissao'] == 4):
+                            ?>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Empresa</label>
+                                    <select class="form-control form-control-sm" id="usuario_empresa_id" name="usuario_empresa_id">
+                                        <option disabled="disabled" selected="selected" value="null">Selecione</option>                                     
+                                        <option value="2"  <?php if (isset($Data['usuario_empresa_id']) && $Data['usuario_empresa_id'] == 2) echo 'selected' ?>>Climed</option>
+                                        <option value="5"  <?php if (isset($Data['usuario_empresa_id']) && $Data['usuario_empresa_id'] == 5) echo 'selected' ?>>Advocavia Caliman</option>
+                                        <option value="6"  <?php if (isset($Data['usuario_empresa_id']) && $Data['usuario_empresa_id'] == 6) echo 'selected' ?>>Sindjetibá</option>
+                                        <option value="10"  <?php if (isset($Data['usuario_empresa_id']) && $Data['usuario_empresa_id'] == 10) echo 'selected' ?>>Familia Falquetto</option>
                                     </select>
                                 </div>
                             </div>
